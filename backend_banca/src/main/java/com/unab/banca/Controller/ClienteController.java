@@ -35,14 +35,18 @@ public class ClienteController {
         return new ResponseEntity<>(obj, HttpStatus.OK);     
     }
    
-    @DeleteMapping(value="/{id}") 
-    public ResponseEntity<Cliente> eliminar(@PathVariable String id){ 
-        Cliente obj = clienteService.findById(id); 
-        if(obj!=null) 
-            clienteService.delete(id); 
-        else 
-            return new ResponseEntity<>(obj, HttpStatus.INTERNAL_SERVER_ERROR); 
-        return new ResponseEntity<>(obj, HttpStatus.OK); 
+@DeleteMapping(value="/{id}")
+
+    public ResponseEntity<Cliente> eliminar(@PathVariable String id){
+        Cliente obj = clienteService.findById(id);
+        if(obj!=null) clienteService.delete(id);
+
+        else
+
+         return new ResponseEntity<>(obj, HttpStatus.INTERNAL_SERVER_ERROR);
+
+        return new ResponseEntity<>(obj, HttpStatus.OK);
+
     }
     
     @PutMapping(value="/") 
